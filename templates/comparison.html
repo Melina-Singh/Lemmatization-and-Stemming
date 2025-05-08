@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lemmatization vs Stemming</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Sticky table header */
+        thead th {
+            position: sticky;
+            top: 0;
+            background-color: #f3f4f6;
+            z-index: 10;
+        }
+        /* Tooltip styling */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+        }
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            width: 200px;
+            background-color: #1f2937;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 20;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-6 max-w-4xl">
+        <!-- Header -->
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">Lemmatization vs Stemming Comparison</h1>
+        <a href="/" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 transition mb-6">
+            Back to Demo
+        </a>
+
+        <!-- Comparison Table -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden mb-8">
+            <div class="p-4 bg-gray-50 border-b">
+                <h2 class="text-xl font-semibold text-gray-800">Comparison Table</h2>
+                <p class="text-gray-600">Explore how words from your input are transformed by lemmatization and stemming.</p>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="border p-3 text-left text-gray-700">
+                                Original Word
+                            </th>
+                            <th class="border p-3 text-left text-gray-700">
+                                <span class="tooltip">
+                                    Lemma
+                                    <span class="tooltip-text">The base dictionary form of a word, considering context and part-of-speech.</span>
+                                </span>
+                            </th>
+                            <th class="border p-3 text-left text-gray-700">
+                                <span class="tooltip">
+                                    Stem
+                                    <span class="tooltip-text">The root form of a word after stripping suffixes, often not a valid word.</span>
+                                </span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if comparisons %}
+                            {% for comp in comparisons %}
+                            <tr class="{% if loop.index % 2 == 0 %}bg-gray-50{% else %}bg-white{% endif %} hover:bg-gray-100">
+                                <td class="border p-3">{{ comp.word }}</td>
+                                <td class="border p-3 text-green-600">{{ comp.lemma }}</td>
+                                <td class="border p-3 text-blue-600">{{ comp.stem }}</td>
+                            </tr>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td colspan="3" class="border p-3 text-gray-600 text-center">No valid alphabetic words found in the input.</td>
+                            </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Explanation Section -->
+        <div class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Explanation</h2>
+            
+            <!-- Input-Specific Analysis -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Analysis of Your Input</h3>
+                {% if comparisons %}
+                    <p class="text-gray-600 mb-2">The following shows how lemmatization and stemming transformed the words in your input text:</p>
+                    <ul class="list-disc pl-5 text-gray-600">
+                        {% for comp in comparisons %}
+                            <li>
+                                <strong>Word: '{{ comp.word }}'</strong>:
+                                <ul class="list-circle pl-6">
+                                    <li>Lemma: <span class="text-green-600">'{{ comp.lemma }}'</span> ({{ comp.difference }})</li>
+                                    <li>Stem: <span class="text-blue-600">'{{ comp.stem }}'</span></li>
+                                </ul>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p class="text-gray-600">No valid alphabetic words were found in your input to compare. Please provide text with words to analyze.</p>
+                {% endif %}
+            </div>
+
+            <!-- General Explanation Sections -->
+            <h3 class="text-lg font-semibold text-gray-800 mt-6">General Information</h3>
+            {% for section in sections %}
+                {% if section.title == 'Lemmatization vs Stemming Comparison' %}
+                    <div class="mt-4">
+                        <h4 class="text-md font-semibold text-gray-800">{{ section.title }}</h4>
+                        {% for line in section.content %}
+                            {% if line.strip() %}
+                                <p class="text-gray-600 mt-2">{{ line }}</p>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% elif section.title == 'Analysis of Your Input' %}
+                    <!-- Skip, already handled above -->
+                {% else %}
+                    <details class="mt-4" {% if section.title == 'Key Differences' %}open{% endif %}>
+                        <summary class="text-md font-semibold {% if section.title == 'Lemmatization Details' %}text-green-700{% elif section.title == 'Stemming Details' %}text-blue-700{% else %}text-gray-700{% endif %} cursor-pointer">
+                            {{ section.title }}
+                        </summary>
+                        <div class="pl-4 mt-2 text-gray-600">
+                            {% for line in section.content %}
+                                {% if line.startswith('- ') %}
+                                    <li class="ml-4">{{ line[2:] }}</li>
+                                {% elif line.strip() %}
+                                    <p class="mt-2">{{ line }}</p>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </details>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93c878b47c35b04b',t:'MTc0NjcwMjIxNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>

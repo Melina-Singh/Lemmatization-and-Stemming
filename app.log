@@ -1,0 +1,247 @@
+2025-05-08 16:42:55 - nlp_processing - INFO - Initializing NLPProcessor
+2025-05-08 16:42:56 - nlp_processing - INFO - Successfully loaded spaCy model and NLTK stemmer
+2025-05-08 16:42:56 - __main__ - INFO - Starting Flask server
+2025-05-08 16:42:58 - nlp_processing - INFO - Initializing NLPProcessor
+2025-05-08 16:42:58 - nlp_processing - INFO - Successfully loaded spaCy model and NLTK stemmer
+2025-05-08 16:42:58 - __main__ - INFO - Starting Flask server
+2025-05-08 16:43:02 - __main__ - INFO - Serving main web interface (index.html)
+2025-05-08 16:43:13 - __main__ - INFO - Received API request to process text
+2025-05-08 16:43:13 - __main__ - DEBUG - Input text: hello, I'm Mele
+2025-05-08 16:43:13 - nlp_processing - INFO - Tokenizing text
+2025-05-08 16:43:13 - nlp_processing - INFO - Processing text with spaCy: hello, I'm Mele
+2025-05-08 16:43:13 - nlp_processing - DEBUG - Validating input: hello, I'm Mele
+2025-05-08 16:43:13 - nlp_processing - DEBUG - spaCy Doc created with 5 tokens
+2025-05-08 16:43:13 - nlp_processing - DEBUG - Tokens: ['hello', ',', 'I', "'m", 'Mele']
+2025-05-08 16:43:13 - nlp_processing - INFO - Lemmatizing text
+2025-05-08 16:43:13 - nlp_processing - INFO - Processing text with spaCy: hello, I'm Mele
+2025-05-08 16:43:13 - nlp_processing - DEBUG - Validating input: hello, I'm Mele
+2025-05-08 16:43:13 - nlp_processing - DEBUG - spaCy Doc created with 5 tokens
+2025-05-08 16:43:13 - nlp_processing - DEBUG - Lemmas: ['hello', ',', 'I', 'be', 'Mele']
+2025-05-08 16:43:13 - nlp_processing - INFO - Stemming text
+2025-05-08 16:43:13 - nlp_processing - INFO - Tokenizing text
+2025-05-08 16:43:13 - nlp_processing - INFO - Processing text with spaCy: hello, I'm Mele
+2025-05-08 16:43:13 - nlp_processing - DEBUG - Validating input: hello, I'm Mele
+2025-05-08 16:43:13 - nlp_processing - DEBUG - spaCy Doc created with 5 tokens
+2025-05-08 16:43:13 - nlp_processing - DEBUG - Tokens: ['hello', ',', 'I', "'m", 'Mele']
+2025-05-08 16:43:13 - nlp_processing - DEBUG - Stems: ['hello', ',', 'i', "'m", 'mele']
+2025-05-08 16:43:13 - nlp_processing - INFO - Performing POS tagging
+2025-05-08 16:43:13 - nlp_processing - INFO - Processing text with spaCy: hello, I'm Mele
+2025-05-08 16:43:13 - nlp_processing - DEBUG - Validating input: hello, I'm Mele
+2025-05-08 16:43:13 - nlp_processing - DEBUG - spaCy Doc created with 5 tokens
+2025-05-08 16:43:13 - nlp_processing - DEBUG - POS tags: [('hello', 'INTJ'), (',', 'PUNCT'), ('I', 'PRON'), ("'m", 'AUX'), ('Mele', 'PROPN')]
+2025-05-08 16:43:13 - nlp_processing - INFO - Performing Named Entity Recognition
+2025-05-08 16:43:13 - nlp_processing - INFO - Processing text with spaCy: hello, I'm Mele
+2025-05-08 16:43:13 - nlp_processing - DEBUG - Validating input: hello, I'm Mele
+2025-05-08 16:43:13 - nlp_processing - DEBUG - spaCy Doc created with 5 tokens
+2025-05-08 16:43:13 - nlp_processing - DEBUG - Named entities: []
+2025-05-08 16:43:13 - nlp_processing - INFO - Generating real-time lemma vs. stem comparison
+2025-05-08 16:43:13 - nlp_processing - INFO - Processing text with spaCy: hello, I'm Mele
+2025-05-08 16:43:13 - nlp_processing - DEBUG - Validating input: hello, I'm Mele
+2025-05-08 16:43:13 - nlp_processing - DEBUG - spaCy Doc created with 5 tokens
+2025-05-08 16:43:13 - nlp_processing - DEBUG - Real-time comparison: [{'word': 'hello', 'lemma': 'hello', 'stem': 'hello', 'difference': 'Same'}, {'word': 'I', 'lemma': 'I', 'stem': 'i', 'difference': 'Same'}, {'word': 'Mele', 'lemma': 'Mele', 'stem': 'mele', 'difference': 'Same'}]
+2025-05-08 16:43:13 - nlp_processing - DEBUG - Real-time explanation: Real-Time Lemmatization vs. Stemming Analysis:
+
+- **Lemmatization** produces the base dictionary form of a word, using linguistic context and part-of-speech. For example, 'going' becomes 'go' as the base verb.
+- **Stemming** applies heuristic rules to strip suffixes, which may result in non-words. For example, 'going' becomes 'go', but 'studies' may become 'studi'.
+
+Key Observations for Your Input:
+- Word: 'hello':
+  - Lemma: 'hello' (Same)
+  - Stem: 'hello'
+- Word: 'I':
+  - Lemma: 'I' (Same)
+  - Stem: 'i'
+- Word: 'Mele':
+  - Lemma: 'Mele' (Same)
+  - Stem: 'mele'
+
+- **Differences**: Lemmatization is more accurate but slower, ensuring valid words. Stemming is faster but may produce invalid roots.
+- **Use Cases**: Use lemmatization for semantic tasks (e.g., machine translation); use stemming for quick indexing (e.g., search engines).
+2025-05-08 16:43:13 - __main__ - INFO - Successfully processed text
+2025-05-08 16:43:13 - __main__ - DEBUG - API response: {'tokens': ['hello', ',', 'I', "'m", 'Mele'], 'lemmas': ['hello', ',', 'I', 'be', 'Mele'], 'stems': ['hello', ',', 'i', "'m", 'mele'], 'pos_tags': [('hello', 'INTJ'), (',', 'PUNCT'), ('I', 'PRON'), ("'m", 'AUX'), ('Mele', 'PROPN')], 'entities': [], 'lemma_stem_comparison': {'comparison': [{'word': 'hello', 'lemma': 'hello', 'stem': 'hello', 'difference': 'Same'}, {'word': 'I', 'lemma': 'I', 'stem': 'i', 'difference': 'Same'}, {'word': 'Mele', 'lemma': 'Mele', 'stem': 'mele', 'difference': 'Same'}], 'explanation': "Real-Time Lemmatization vs. Stemming Analysis:\n\n- **Lemmatization** produces the base dictionary form of a word, using linguistic context and part-of-speech. For example, 'going' becomes 'go' as the base verb.\n- **Stemming** applies heuristic rules to strip suffixes, which may result in non-words. For example, 'going' becomes 'go', but 'studies' may become 'studi'.\n\nKey Observations for Your Input:\n- Word: 'hello':\n  - Lemma: 'hello' (Same)\n  - Stem: 'hello'\n- Word: 'I':\n  - Lemma: 'I' (Same)\n  - Stem: 'i'\n- Word: 'Mele':\n  - Lemma: 'Mele' (Same)\n  - Stem: 'mele'\n\n- **Differences**: Lemmatization is more accurate but slower, ensuring valid words. Stemming is faster but may produce invalid roots.\n- **Use Cases**: Use lemmatization for semantic tasks (e.g., machine translation); use stemming for quick indexing (e.g., search engines)."}}
+2025-05-08 16:43:22 - __main__ - INFO - Serving lemmatization vs. stemming comparison page
+2025-05-08 16:43:22 - nlp_processing - INFO - Generating static lemmatization vs. stemming comparison
+2025-05-08 16:43:22 - nlp_processing - DEBUG - Static comparison: [{'word': 'running', 'lemma': 'run', 'stem': 'run'}, {'word': 'ran', 'lemma': 'run', 'stem': 'ran'}, {'word': 'runs', 'lemma': 'run', 'stem': 'run'}, {'word': 'studies', 'lemma': 'study', 'stem': 'studi'}, {'word': 'studying', 'lemma': 'study', 'stem': 'studi'}, {'word': 'geese', 'lemma': 'geese', 'stem': 'gees'}, {'word': 'children', 'lemma': 'child', 'stem': 'children'}, {'word': 'easily', 'lemma': 'easily', 'stem': 'easili'}, {'word': 'fairly', 'lemma': 'fairly', 'stem': 'fairli'}, {'word': 'better', 'lemma': 'well', 'stem': 'better'}, {'word': 'best', 'lemma': 'well', 'stem': 'best'}, {'word': 'organization', 'lemma': 'organization', 'stem': 'organ'}]
+2025-05-08 16:43:22 - nlp_processing - DEBUG - Static explanation generated
+2025-05-08 16:43:22 - __main__ - DEBUG - Comparison data: [{'word': 'running', 'lemma': 'run', 'stem': 'run'}, {'word': 'ran', 'lemma': 'run', 'stem': 'ran'}, {'word': 'runs', 'lemma': 'run', 'stem': 'run'}, {'word': 'studies', 'lemma': 'study', 'stem': 'studi'}, {'word': 'studying', 'lemma': 'study', 'stem': 'studi'}, {'word': 'geese', 'lemma': 'geese', 'stem': 'gees'}, {'word': 'children', 'lemma': 'child', 'stem': 'children'}, {'word': 'easily', 'lemma': 'easily', 'stem': 'easili'}, {'word': 'fairly', 'lemma': 'fairly', 'stem': 'fairli'}, {'word': 'better', 'lemma': 'well', 'stem': 'better'}, {'word': 'best', 'lemma': 'well', 'stem': 'best'}, {'word': 'organization', 'lemma': 'organization', 'stem': 'organ'}]
+2025-05-08 16:43:22 - __main__ - DEBUG - Parsed sections: [{'title': 'Lemmatization vs Stemming Comparison', 'content': []}, {'title': 'Lemmatization*', 'content': ['- Reduces words to their base or dictionary form (lemma) using linguistic rules and context.', '- Considers part-of-speech and context, ensuring valid dictionary words.', "- Examples: 'running' -> 'run', 'geese' -> 'goose', 'better' -> 'good'.", '- Pros: Highly accurate, produces meaningful words, context-aware.', '- Cons: Computationally intensive, requires robust linguistic resources.', '- Use Cases: Semantic analysis, machine translation, information retrieval.']}, {'title': 'Stemming*', 'content': ['- Strips suffixes using heuristic rules, often resulting in non-words.', '- Faster but less precise, may produce invalid or ambiguous roots.', "- Examples: 'running' -> 'run', 'geese' -> 'gees', 'studies' -> 'studi'.", '- Pros: Fast, simple, reduces word variations effectively.', '- Cons: Less accurate, may lose semantic meaning, context-agnostic.', '- Use Cases: Search engines, text indexing, basic text preprocessing.']}, {'title': 'Key Differences*', 'content': ["- Lemmatization ensures valid words; stemming may not (e.g., 'studies' -> 'studi').", "- Lemmatization uses context (e.g., 'better' -> 'good'); stemming is rule-based.", '- Lemmatization is slower but more precise; stemming is faster but cruder.', '- Lemmatization is better for tasks requiring semantic accuracy; stemming suits quick preprocessing.']}]
+2025-05-08 16:51:22 - nlp_processing - INFO - Initializing NLPProcessor
+2025-05-08 16:51:23 - nlp_processing - INFO - Successfully loaded spaCy model and NLTK stemmer
+2025-05-08 16:51:23 - __main__ - INFO - Starting Flask server
+2025-05-08 16:51:25 - nlp_processing - INFO - Initializing NLPProcessor
+2025-05-08 16:51:25 - nlp_processing - INFO - Successfully loaded spaCy model and NLTK stemmer
+2025-05-08 16:51:25 - __main__ - INFO - Starting Flask server
+2025-05-08 16:51:28 - __main__ - INFO - Serving main web interface (index.html)
+2025-05-08 16:51:39 - __main__ - INFO - Received API request to process text
+2025-05-08 16:51:39 - __main__ - DEBUG - Input text: Hello, My name is Radha.
+2025-05-08 16:51:39 - nlp_processing - INFO - Tokenizing text
+2025-05-08 16:51:39 - nlp_processing - INFO - Processing text with spaCy: Hello, My name is Radha.
+2025-05-08 16:51:39 - nlp_processing - DEBUG - Validating input: Hello, My name is Radha.
+2025-05-08 16:51:39 - nlp_processing - DEBUG - spaCy Doc created with 7 tokens
+2025-05-08 16:51:39 - nlp_processing - DEBUG - Tokens: ['Hello', ',', 'My', 'name', 'is', 'Radha', '.']
+2025-05-08 16:51:39 - nlp_processing - INFO - Lemmatizing text
+2025-05-08 16:51:39 - nlp_processing - INFO - Processing text with spaCy: Hello, My name is Radha.
+2025-05-08 16:51:39 - nlp_processing - DEBUG - Validating input: Hello, My name is Radha.
+2025-05-08 16:51:39 - nlp_processing - DEBUG - spaCy Doc created with 7 tokens
+2025-05-08 16:51:39 - nlp_processing - DEBUG - Lemmas: ['hello', ',', 'my', 'name', 'be', 'Radha', '.']
+2025-05-08 16:51:39 - nlp_processing - INFO - Stemming text
+2025-05-08 16:51:39 - nlp_processing - INFO - Tokenizing text
+2025-05-08 16:51:39 - nlp_processing - INFO - Processing text with spaCy: Hello, My name is Radha.
+2025-05-08 16:51:39 - nlp_processing - DEBUG - Validating input: Hello, My name is Radha.
+2025-05-08 16:51:39 - nlp_processing - DEBUG - spaCy Doc created with 7 tokens
+2025-05-08 16:51:39 - nlp_processing - DEBUG - Tokens: ['Hello', ',', 'My', 'name', 'is', 'Radha', '.']
+2025-05-08 16:51:39 - nlp_processing - DEBUG - Stems: ['hello', ',', 'my', 'name', 'is', 'radha', '.']
+2025-05-08 16:51:39 - nlp_processing - INFO - Performing POS tagging
+2025-05-08 16:51:39 - nlp_processing - INFO - Processing text with spaCy: Hello, My name is Radha.
+2025-05-08 16:51:39 - nlp_processing - DEBUG - Validating input: Hello, My name is Radha.
+2025-05-08 16:51:39 - nlp_processing - DEBUG - spaCy Doc created with 7 tokens
+2025-05-08 16:51:39 - nlp_processing - DEBUG - POS tags: [('Hello', 'INTJ'), (',', 'PUNCT'), ('My', 'PRON'), ('name', 'NOUN'), ('is', 'AUX'), ('Radha', 'PROPN'), ('.', 'PUNCT')]
+2025-05-08 16:51:39 - nlp_processing - INFO - Performing Named Entity Recognition
+2025-05-08 16:51:39 - nlp_processing - INFO - Processing text with spaCy: Hello, My name is Radha.
+2025-05-08 16:51:39 - nlp_processing - DEBUG - Validating input: Hello, My name is Radha.
+2025-05-08 16:51:39 - nlp_processing - DEBUG - spaCy Doc created with 7 tokens
+2025-05-08 16:51:39 - nlp_processing - DEBUG - Named entities: [('Radha', 'PERSON')]
+2025-05-08 16:51:39 - nlp_processing - INFO - Generating real-time lemma vs. stem comparison
+2025-05-08 16:51:39 - nlp_processing - INFO - Processing text with spaCy: Hello, My name is Radha.
+2025-05-08 16:51:39 - nlp_processing - DEBUG - Validating input: Hello, My name is Radha.
+2025-05-08 16:51:39 - nlp_processing - DEBUG - spaCy Doc created with 7 tokens
+2025-05-08 16:51:39 - nlp_processing - DEBUG - Real-time comparison: [{'word': 'Hello', 'lemma': 'hello', 'stem': 'hello', 'difference': 'Same'}, {'word': 'My', 'lemma': 'my', 'stem': 'my', 'difference': 'Same'}, {'word': 'name', 'lemma': 'name', 'stem': 'name', 'difference': 'Same'}, {'word': 'is', 'lemma': 'be', 'stem': 'is', 'difference': 'Different: Lemma is context-aware, stem is rule-based'}, {'word': 'Radha', 'lemma': 'Radha', 'stem': 'radha', 'difference': 'Same'}]
+2025-05-08 16:51:39 - nlp_processing - DEBUG - Real-time explanation: Real-Time Lemmatization vs. Stemming Analysis:
+
+- **Lemmatization** produces the base dictionary form of a word, using linguistic context and part-of-speech. For example, 'going' becomes 'go' as the base verb.
+- **Stemming** applies heuristic rules to strip suffixes, which may result in non-words. For example, 'going' becomes 'go', but 'studies' may become 'studi'.
+
+Key Observations for Your Input:
+- Word: 'Hello':
+  - Lemma: 'hello' (Same)
+  - Stem: 'hello'
+- Word: 'My':
+  - Lemma: 'my' (Same)
+  - Stem: 'my'
+- Word: 'name':
+  - Lemma: 'name' (Same)
+  - Stem: 'name'
+- And 2 more words compared (see table).
+
+- **Differences**: Lemmatization is more accurate but slower, ensuring valid words. Stemming is faster but may produce invalid roots.
+- **Use Cases**: Use lemmatization for semantic tasks (e.g., machine translation); use stemming for quick indexing (e.g., search engines).
+2025-05-08 16:51:39 - __main__ - INFO - Successfully processed text
+2025-05-08 16:51:39 - __main__ - DEBUG - API response: {'tokens': ['Hello', ',', 'My', 'name', 'is', 'Radha', '.'], 'lemmas': ['hello', ',', 'my', 'name', 'be', 'Radha', '.'], 'stems': ['hello', ',', 'my', 'name', 'is', 'radha', '.'], 'pos_tags': [('Hello', 'INTJ'), (',', 'PUNCT'), ('My', 'PRON'), ('name', 'NOUN'), ('is', 'AUX'), ('Radha', 'PROPN'), ('.', 'PUNCT')], 'entities': [('Radha', 'PERSON')], 'lemma_stem_comparison': {'comparison': [{'word': 'Hello', 'lemma': 'hello', 'stem': 'hello', 'difference': 'Same'}, {'word': 'My', 'lemma': 'my', 'stem': 'my', 'difference': 'Same'}, {'word': 'name', 'lemma': 'name', 'stem': 'name', 'difference': 'Same'}, {'word': 'is', 'lemma': 'be', 'stem': 'is', 'difference': 'Different: Lemma is context-aware, stem is rule-based'}, {'word': 'Radha', 'lemma': 'Radha', 'stem': 'radha', 'difference': 'Same'}], 'explanation': "Real-Time Lemmatization vs. Stemming Analysis:\n\n- **Lemmatization** produces the base dictionary form of a word, using linguistic context and part-of-speech. For example, 'going' becomes 'go' as the base verb.\n- **Stemming** applies heuristic rules to strip suffixes, which may result in non-words. For example, 'going' becomes 'go', but 'studies' may become 'studi'.\n\nKey Observations for Your Input:\n- Word: 'Hello':\n  - Lemma: 'hello' (Same)\n  - Stem: 'hello'\n- Word: 'My':\n  - Lemma: 'my' (Same)\n  - Stem: 'my'\n- Word: 'name':\n  - Lemma: 'name' (Same)\n  - Stem: 'name'\n- And 2 more words compared (see table).\n\n- **Differences**: Lemmatization is more accurate but slower, ensuring valid words. Stemming is faster but may produce invalid roots.\n- **Use Cases**: Use lemmatization for semantic tasks (e.g., machine translation); use stemming for quick indexing (e.g., search engines)."}}
+2025-05-08 16:51:45 - __main__ - INFO - Serving lemmatization vs. stemming comparison page
+2025-05-08 16:51:45 - nlp_processing - INFO - Generating static lemmatization vs. stemming comparison
+2025-05-08 16:51:45 - nlp_processing - DEBUG - Static comparison: [{'word': 'running', 'lemma': 'run', 'stem': 'run'}, {'word': 'ran', 'lemma': 'run', 'stem': 'ran'}, {'word': 'runs', 'lemma': 'run', 'stem': 'run'}, {'word': 'studies', 'lemma': 'study', 'stem': 'studi'}, {'word': 'studying', 'lemma': 'study', 'stem': 'studi'}, {'word': 'geese', 'lemma': 'geese', 'stem': 'gees'}, {'word': 'children', 'lemma': 'child', 'stem': 'children'}, {'word': 'easily', 'lemma': 'easily', 'stem': 'easili'}, {'word': 'fairly', 'lemma': 'fairly', 'stem': 'fairli'}, {'word': 'better', 'lemma': 'well', 'stem': 'better'}, {'word': 'best', 'lemma': 'well', 'stem': 'best'}, {'word': 'organization', 'lemma': 'organization', 'stem': 'organ'}]
+2025-05-08 16:51:45 - nlp_processing - DEBUG - Static explanation generated
+2025-05-08 16:51:45 - __main__ - DEBUG - Comparison data: [{'word': 'running', 'lemma': 'run', 'stem': 'run'}, {'word': 'ran', 'lemma': 'run', 'stem': 'ran'}, {'word': 'runs', 'lemma': 'run', 'stem': 'run'}, {'word': 'studies', 'lemma': 'study', 'stem': 'studi'}, {'word': 'studying', 'lemma': 'study', 'stem': 'studi'}, {'word': 'geese', 'lemma': 'geese', 'stem': 'gees'}, {'word': 'children', 'lemma': 'child', 'stem': 'children'}, {'word': 'easily', 'lemma': 'easily', 'stem': 'easili'}, {'word': 'fairly', 'lemma': 'fairly', 'stem': 'fairli'}, {'word': 'better', 'lemma': 'well', 'stem': 'better'}, {'word': 'best', 'lemma': 'well', 'stem': 'best'}, {'word': 'organization', 'lemma': 'organization', 'stem': 'organ'}]
+2025-05-08 16:51:45 - __main__ - DEBUG - Parsed sections: [{'title': 'Lemmatization vs Stemming Comparison', 'content': []}, {'title': 'Lemmatization*', 'content': ['- Reduces words to their base or dictionary form (lemma) using linguistic rules and context.', '- Considers part-of-speech and context, ensuring valid dictionary words.', "- Examples: 'running' -> 'run', 'geese' -> 'goose', 'better' -> 'good'.", '- Pros: Highly accurate, produces meaningful words, context-aware.', '- Cons: Computationally intensive, requires robust linguistic resources.', '- Use Cases: Semantic analysis, machine translation, information retrieval.']}, {'title': 'Stemming*', 'content': ['- Strips suffixes using heuristic rules, often resulting in non-words.', '- Faster but less precise, may produce invalid or ambiguous roots.', "- Examples: 'running' -> 'run', 'geese' -> 'gees', 'studies' -> 'studi'.", '- Pros: Fast, simple, reduces word variations effectively.', '- Cons: Less accurate, may lose semantic meaning, context-agnostic.', '- Use Cases: Search engines, text indexing, basic text preprocessing.']}, {'title': 'Key Differences*', 'content': ["- Lemmatization ensures valid words; stemming may not (e.g., 'studies' -> 'studi').", "- Lemmatization uses context (e.g., 'better' -> 'good'); stemming is rule-based.", '- Lemmatization is slower but more precise; stemming is faster but cruder.', '- Lemmatization is better for tasks requiring semantic accuracy; stemming suits quick preprocessing.']}]
+2025-05-08 16:55:28 - nlp_processing - INFO - Initializing NLPProcessor
+2025-05-08 16:55:29 - nlp_processing - INFO - Successfully loaded spaCy model and NLTK stemmer
+2025-05-08 16:55:29 - __main__ - INFO - Starting Flask server
+2025-05-08 16:58:16 - nlp_processing - INFO - Initializing NLPProcessor
+2025-05-08 16:58:16 - nlp_processing - INFO - Successfully loaded spaCy model and NLTK stemmer
+2025-05-08 16:58:16 - __main__ - INFO - Starting Flask server
+2025-05-08 16:58:18 - nlp_processing - INFO - Initializing NLPProcessor
+2025-05-08 16:58:18 - nlp_processing - INFO - Successfully loaded spaCy model and NLTK stemmer
+2025-05-08 16:58:18 - __main__ - INFO - Starting Flask server
+2025-05-08 16:58:22 - __main__ - INFO - Serving main web interface (index.html)
+2025-05-08 16:58:49 - __main__ - INFO - Received API request to process text
+2025-05-08 16:58:49 - __main__ - DEBUG - Input text: hello , A Dog is barking at Rohan.
+2025-05-08 16:58:49 - nlp_processing - INFO - Tokenizing text
+2025-05-08 16:58:49 - nlp_processing - INFO - Processing text with spaCy: hello , A Dog is barking at Rohan.
+2025-05-08 16:58:49 - nlp_processing - DEBUG - Validating input: hello , A Dog is barking at Rohan.
+2025-05-08 16:58:49 - nlp_processing - DEBUG - spaCy Doc created with 9 tokens
+2025-05-08 16:58:49 - nlp_processing - DEBUG - Tokens: ['hello', ',', 'A', 'Dog', 'is', 'barking', 'at', 'Rohan', '.']
+2025-05-08 16:58:49 - nlp_processing - INFO - Lemmatizing text
+2025-05-08 16:58:49 - nlp_processing - INFO - Processing text with spaCy: hello , A Dog is barking at Rohan.
+2025-05-08 16:58:49 - nlp_processing - DEBUG - Validating input: hello , A Dog is barking at Rohan.
+2025-05-08 16:58:49 - nlp_processing - DEBUG - spaCy Doc created with 9 tokens
+2025-05-08 16:58:49 - nlp_processing - DEBUG - Lemmas: ['hello', ',', 'a', 'Dog', 'be', 'bark', 'at', 'Rohan', '.']
+2025-05-08 16:58:49 - nlp_processing - INFO - Stemming text
+2025-05-08 16:58:49 - nlp_processing - INFO - Tokenizing text
+2025-05-08 16:58:49 - nlp_processing - INFO - Processing text with spaCy: hello , A Dog is barking at Rohan.
+2025-05-08 16:58:49 - nlp_processing - DEBUG - Validating input: hello , A Dog is barking at Rohan.
+2025-05-08 16:58:49 - nlp_processing - DEBUG - spaCy Doc created with 9 tokens
+2025-05-08 16:58:49 - nlp_processing - DEBUG - Tokens: ['hello', ',', 'A', 'Dog', 'is', 'barking', 'at', 'Rohan', '.']
+2025-05-08 16:58:49 - nlp_processing - DEBUG - Stems: ['hello', ',', 'a', 'dog', 'is', 'bark', 'at', 'rohan', '.']
+2025-05-08 16:58:49 - nlp_processing - INFO - Performing POS tagging
+2025-05-08 16:58:49 - nlp_processing - INFO - Processing text with spaCy: hello , A Dog is barking at Rohan.
+2025-05-08 16:58:49 - nlp_processing - DEBUG - Validating input: hello , A Dog is barking at Rohan.
+2025-05-08 16:58:49 - nlp_processing - DEBUG - spaCy Doc created with 9 tokens
+2025-05-08 16:58:49 - nlp_processing - DEBUG - POS tags: [('hello', 'INTJ'), (',', 'PUNCT'), ('A', 'DET'), ('Dog', 'PROPN'), ('is', 'AUX'), ('barking', 'VERB'), ('at', 'ADP'), ('Rohan', 'PROPN'), ('.', 'PUNCT')]
+2025-05-08 16:58:49 - nlp_processing - INFO - Performing Named Entity Recognition
+2025-05-08 16:58:49 - nlp_processing - INFO - Processing text with spaCy: hello , A Dog is barking at Rohan.
+2025-05-08 16:58:49 - nlp_processing - DEBUG - Validating input: hello , A Dog is barking at Rohan.
+2025-05-08 16:58:49 - nlp_processing - DEBUG - spaCy Doc created with 9 tokens
+2025-05-08 16:58:49 - nlp_processing - DEBUG - Named entities: [('Rohan', 'ORG')]
+2025-05-08 16:58:49 - nlp_processing - INFO - Generating real-time lemma vs. stem comparison
+2025-05-08 16:58:49 - nlp_processing - INFO - Processing text with spaCy: hello , A Dog is barking at Rohan.
+2025-05-08 16:58:49 - nlp_processing - DEBUG - Validating input: hello , A Dog is barking at Rohan.
+2025-05-08 16:58:49 - nlp_processing - DEBUG - spaCy Doc created with 9 tokens
+2025-05-08 16:58:49 - nlp_processing - DEBUG - Real-time comparison: [{'word': 'hello', 'lemma': 'hello', 'stem': 'hello', 'difference': 'Same'}, {'word': 'A', 'lemma': 'a', 'stem': 'a', 'difference': 'Same'}, {'word': 'Dog', 'lemma': 'Dog', 'stem': 'dog', 'difference': 'Same'}, {'word': 'is', 'lemma': 'be', 'stem': 'is', 'difference': 'Different: Lemma uses context and part-of-speech; stem uses rule-based suffix stripping'}, {'word': 'barking', 'lemma': 'bark', 'stem': 'bark', 'difference': 'Same'}, {'word': 'at', 'lemma': 'at', 'stem': 'at', 'difference': 'Same'}, {'word': 'Rohan', 'lemma': 'Rohan', 'stem': 'rohan', 'difference': 'Same'}]
+2025-05-08 16:58:49 - __main__ - INFO - Successfully processed text
+2025-05-08 16:58:55 - __main__ - INFO - Serving lemmatization vs. stemming comparison page
+2025-05-08 16:58:55 - __main__ - DEBUG - Received text for comparison: hello , A Dog is barking at Rohan.
+2025-05-08 16:58:55 - nlp_processing - INFO - Generating real-time lemma vs. stem comparison
+2025-05-08 16:58:55 - nlp_processing - INFO - Processing text with spaCy: hello , A Dog is barking at Rohan.
+2025-05-08 16:58:55 - nlp_processing - DEBUG - Validating input: hello , A Dog is barking at Rohan.
+2025-05-08 16:58:55 - nlp_processing - DEBUG - spaCy Doc created with 9 tokens
+2025-05-08 16:58:55 - nlp_processing - DEBUG - Real-time comparison: [{'word': 'hello', 'lemma': 'hello', 'stem': 'hello', 'difference': 'Same'}, {'word': 'A', 'lemma': 'a', 'stem': 'a', 'difference': 'Same'}, {'word': 'Dog', 'lemma': 'Dog', 'stem': 'dog', 'difference': 'Same'}, {'word': 'is', 'lemma': 'be', 'stem': 'is', 'difference': 'Different: Lemma uses context and part-of-speech; stem uses rule-based suffix stripping'}, {'word': 'barking', 'lemma': 'bark', 'stem': 'bark', 'difference': 'Same'}, {'word': 'at', 'lemma': 'at', 'stem': 'at', 'difference': 'Same'}, {'word': 'Rohan', 'lemma': 'Rohan', 'stem': 'rohan', 'difference': 'Same'}]
+2025-05-08 16:58:55 - __main__ - DEBUG - Comparison data: [{'word': 'hello', 'lemma': 'hello', 'stem': 'hello', 'difference': 'Same'}, {'word': 'A', 'lemma': 'a', 'stem': 'a', 'difference': 'Same'}, {'word': 'Dog', 'lemma': 'Dog', 'stem': 'dog', 'difference': 'Same'}, {'word': 'is', 'lemma': 'be', 'stem': 'is', 'difference': 'Different: Lemma uses context and part-of-speech; stem uses rule-based suffix stripping'}, {'word': 'barking', 'lemma': 'bark', 'stem': 'bark', 'difference': 'Same'}, {'word': 'at', 'lemma': 'at', 'stem': 'at', 'difference': 'Same'}, {'word': 'Rohan', 'lemma': 'Rohan', 'stem': 'rohan', 'difference': 'Same'}]
+2025-05-08 16:59:24 - __main__ - INFO - Serving main web interface (index.html)
+2025-05-08 16:59:26 - __main__ - INFO - Serving lemmatization vs. stemming comparison page
+2025-05-08 16:59:26 - __main__ - DEBUG - Received text for comparison: hello , A Dog is barking at Rohan.
+2025-05-08 16:59:26 - nlp_processing - INFO - Generating real-time lemma vs. stem comparison
+2025-05-08 16:59:26 - nlp_processing - INFO - Processing text with spaCy: hello , A Dog is barking at Rohan.
+2025-05-08 16:59:26 - nlp_processing - DEBUG - Validating input: hello , A Dog is barking at Rohan.
+2025-05-08 16:59:26 - nlp_processing - DEBUG - spaCy Doc created with 9 tokens
+2025-05-08 16:59:26 - nlp_processing - DEBUG - Real-time comparison: [{'word': 'hello', 'lemma': 'hello', 'stem': 'hello', 'difference': 'Same'}, {'word': 'A', 'lemma': 'a', 'stem': 'a', 'difference': 'Same'}, {'word': 'Dog', 'lemma': 'Dog', 'stem': 'dog', 'difference': 'Same'}, {'word': 'is', 'lemma': 'be', 'stem': 'is', 'difference': 'Different: Lemma uses context and part-of-speech; stem uses rule-based suffix stripping'}, {'word': 'barking', 'lemma': 'bark', 'stem': 'bark', 'difference': 'Same'}, {'word': 'at', 'lemma': 'at', 'stem': 'at', 'difference': 'Same'}, {'word': 'Rohan', 'lemma': 'Rohan', 'stem': 'rohan', 'difference': 'Same'}]
+2025-05-08 16:59:26 - __main__ - DEBUG - Comparison data: [{'word': 'hello', 'lemma': 'hello', 'stem': 'hello', 'difference': 'Same'}, {'word': 'A', 'lemma': 'a', 'stem': 'a', 'difference': 'Same'}, {'word': 'Dog', 'lemma': 'Dog', 'stem': 'dog', 'difference': 'Same'}, {'word': 'is', 'lemma': 'be', 'stem': 'is', 'difference': 'Different: Lemma uses context and part-of-speech; stem uses rule-based suffix stripping'}, {'word': 'barking', 'lemma': 'bark', 'stem': 'bark', 'difference': 'Same'}, {'word': 'at', 'lemma': 'at', 'stem': 'at', 'difference': 'Same'}, {'word': 'Rohan', 'lemma': 'Rohan', 'stem': 'rohan', 'difference': 'Same'}]
+2025-05-08 17:01:53 - nlp_processing - INFO - Initializing NLPProcessor
+2025-05-08 17:01:53 - nlp_processing - INFO - Successfully loaded spaCy model and NLTK stemmer
+2025-05-08 17:01:53 - __main__ - INFO - Starting Flask server
+2025-05-08 17:01:55 - nlp_processing - INFO - Initializing NLPProcessor
+2025-05-08 17:01:56 - nlp_processing - INFO - Successfully loaded spaCy model and NLTK stemmer
+2025-05-08 17:01:56 - __main__ - INFO - Starting Flask server
+2025-05-08 17:02:02 - __main__ - INFO - Serving main web interface (index.html)
+2025-05-08 17:02:20 - __main__ - INFO - Received API request to process text
+2025-05-08 17:02:20 - __main__ - DEBUG - Input text: hello i am learning from this, I am Madhav
+2025-05-08 17:02:20 - nlp_processing - INFO - Tokenizing text
+2025-05-08 17:02:20 - nlp_processing - INFO - Processing text with spaCy: hello i am learning from this, I am Madhav
+2025-05-08 17:02:20 - nlp_processing - DEBUG - Validating input: hello i am learning from this, I am Madhav
+2025-05-08 17:02:20 - nlp_processing - DEBUG - spaCy Doc created with 10 tokens
+2025-05-08 17:02:20 - nlp_processing - DEBUG - Tokens: ['hello', 'i', 'am', 'learning', 'from', 'this', ',', 'I', 'am', 'Madhav']
+2025-05-08 17:02:20 - nlp_processing - INFO - Lemmatizing text
+2025-05-08 17:02:20 - nlp_processing - INFO - Processing text with spaCy: hello i am learning from this, I am Madhav
+2025-05-08 17:02:20 - nlp_processing - DEBUG - Validating input: hello i am learning from this, I am Madhav
+2025-05-08 17:02:20 - nlp_processing - DEBUG - spaCy Doc created with 10 tokens
+2025-05-08 17:02:20 - nlp_processing - DEBUG - Lemmas: ['hello', 'I', 'be', 'learn', 'from', 'this', ',', 'I', 'be', 'Madhav']
+2025-05-08 17:02:20 - nlp_processing - INFO - Stemming text
+2025-05-08 17:02:20 - nlp_processing - INFO - Tokenizing text
+2025-05-08 17:02:20 - nlp_processing - INFO - Processing text with spaCy: hello i am learning from this, I am Madhav
+2025-05-08 17:02:20 - nlp_processing - DEBUG - Validating input: hello i am learning from this, I am Madhav
+2025-05-08 17:02:20 - nlp_processing - DEBUG - spaCy Doc created with 10 tokens
+2025-05-08 17:02:20 - nlp_processing - DEBUG - Tokens: ['hello', 'i', 'am', 'learning', 'from', 'this', ',', 'I', 'am', 'Madhav']
+2025-05-08 17:02:20 - nlp_processing - DEBUG - Stems: ['hello', 'i', 'am', 'learn', 'from', 'thi', ',', 'i', 'am', 'madhav']
+2025-05-08 17:02:20 - nlp_processing - INFO - Performing POS tagging
+2025-05-08 17:02:20 - nlp_processing - INFO - Processing text with spaCy: hello i am learning from this, I am Madhav
+2025-05-08 17:02:20 - nlp_processing - DEBUG - Validating input: hello i am learning from this, I am Madhav
+2025-05-08 17:02:20 - nlp_processing - DEBUG - spaCy Doc created with 10 tokens
+2025-05-08 17:02:20 - nlp_processing - DEBUG - POS tags: [('hello', 'INTJ'), ('i', 'PRON'), ('am', 'AUX'), ('learning', 'VERB'), ('from', 'ADP'), ('this', 'DET'), (',', 'PUNCT'), ('I', 'PRON'), ('am', 'AUX'), ('Madhav', 'PROPN')]
+2025-05-08 17:02:20 - nlp_processing - INFO - Performing Named Entity Recognition
+2025-05-08 17:02:20 - nlp_processing - INFO - Processing text with spaCy: hello i am learning from this, I am Madhav
+2025-05-08 17:02:20 - nlp_processing - DEBUG - Validating input: hello i am learning from this, I am Madhav
+2025-05-08 17:02:20 - nlp_processing - DEBUG - spaCy Doc created with 10 tokens
+2025-05-08 17:02:20 - nlp_processing - DEBUG - Named entities: [('Madhav', 'PERSON')]
+2025-05-08 17:02:20 - nlp_processing - INFO - Generating real-time lemma vs. stem comparison
+2025-05-08 17:02:20 - nlp_processing - INFO - Processing text with spaCy: hello i am learning from this, I am Madhav
+2025-05-08 17:02:20 - nlp_processing - DEBUG - Validating input: hello i am learning from this, I am Madhav
+2025-05-08 17:02:20 - nlp_processing - DEBUG - spaCy Doc created with 10 tokens
+2025-05-08 17:02:20 - nlp_processing - DEBUG - Real-time comparison: [{'word': 'hello', 'lemma': 'hello', 'stem': 'hello', 'difference': 'Same'}, {'word': 'i', 'lemma': 'I', 'stem': 'i', 'difference': 'Same'}, {'word': 'am', 'lemma': 'be', 'stem': 'am', 'difference': 'Different: Lemma uses context and part-of-speech; stem uses rule-based suffix stripping'}, {'word': 'learning', 'lemma': 'learn', 'stem': 'learn', 'difference': 'Same'}, {'word': 'from', 'lemma': 'from', 'stem': 'from', 'difference': 'Same'}, {'word': 'this', 'lemma': 'this', 'stem': 'thi', 'difference': 'Different: Lemma uses context and part-of-speech; stem uses rule-based suffix stripping'}, {'word': 'Madhav', 'lemma': 'Madhav', 'stem': 'madhav', 'difference': 'Same'}]
+2025-05-08 17:02:20 - __main__ - INFO - Successfully processed text
+2025-05-08 17:02:24 - __main__ - INFO - Serving lemmatization vs. stemming comparison page
+2025-05-08 17:02:24 - __main__ - DEBUG - Received text for comparison: hello i am learning from this, I am Madhav
+2025-05-08 17:02:24 - nlp_processing - INFO - Generating real-time lemma vs. stem comparison
+2025-05-08 17:02:24 - nlp_processing - INFO - Processing text with spaCy: hello i am learning from this, I am Madhav
+2025-05-08 17:02:24 - nlp_processing - DEBUG - Validating input: hello i am learning from this, I am Madhav
+2025-05-08 17:02:24 - nlp_processing - DEBUG - spaCy Doc created with 10 tokens
+2025-05-08 17:02:24 - nlp_processing - DEBUG - Real-time comparison: [{'word': 'hello', 'lemma': 'hello', 'stem': 'hello', 'difference': 'Same'}, {'word': 'i', 'lemma': 'I', 'stem': 'i', 'difference': 'Same'}, {'word': 'am', 'lemma': 'be', 'stem': 'am', 'difference': 'Different: Lemma uses context and part-of-speech; stem uses rule-based suffix stripping'}, {'word': 'learning', 'lemma': 'learn', 'stem': 'learn', 'difference': 'Same'}, {'word': 'from', 'lemma': 'from', 'stem': 'from', 'difference': 'Same'}, {'word': 'this', 'lemma': 'this', 'stem': 'thi', 'difference': 'Different: Lemma uses context and part-of-speech; stem uses rule-based suffix stripping'}, {'word': 'Madhav', 'lemma': 'Madhav', 'stem': 'madhav', 'difference': 'Same'}]
+2025-05-08 17:02:24 - __main__ - DEBUG - Comparison data: [{'word': 'hello', 'lemma': 'hello', 'stem': 'hello', 'difference': 'Same'}, {'word': 'i', 'lemma': 'I', 'stem': 'i', 'difference': 'Same'}, {'word': 'am', 'lemma': 'be', 'stem': 'am', 'difference': 'Different: Lemma uses context and part-of-speech; stem uses rule-based suffix stripping'}, {'word': 'learning', 'lemma': 'learn', 'stem': 'learn', 'difference': 'Same'}, {'word': 'from', 'lemma': 'from', 'stem': 'from', 'difference': 'Same'}, {'word': 'this', 'lemma': 'this', 'stem': 'thi', 'difference': 'Different: Lemma uses context and part-of-speech; stem uses rule-based suffix stripping'}, {'word': 'Madhav', 'lemma': 'Madhav', 'stem': 'madhav', 'difference': 'Same'}]
